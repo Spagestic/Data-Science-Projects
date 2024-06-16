@@ -1,2 +1,6 @@
 /Kaggle/Time-Series-Forecasting/data
 /Kaggle/Cleaned-vs-Dirty-V2/data
+/Kaggle/nlp-with-disaster-tweets/data
+
+# all files in the folders called data
+**/data/*
