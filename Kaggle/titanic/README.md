@@ -2,7 +2,7 @@
 
 Streamlit Demo: [https://data-science-projects-titanic.streamlit.app/](https://data-science-projects-titanic.streamlit.app/)
 
-![Titanic Image](https://images8.alphacoders.com/405/405029.jpg)
+![Titanic App](titanic_app.png)
 
 ## Introduction
 
