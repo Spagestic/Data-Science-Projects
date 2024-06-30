@@ -2,6 +2,8 @@
 
 Streamlit Demo: [https://spagestic-data-science-emnist.streamlit.app/](https://spagestic-data-science-emnist.streamlit.app/)
 
+![Streamlit App](emnist_app.png)
+
 This project is the perfect introduction to techniques like neural networks using a classic dataset including pre-extracted features.
 
 ## Project Description
