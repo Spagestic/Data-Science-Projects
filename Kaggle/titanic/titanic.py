@@ -1,7 +1,5 @@
 import streamlit as st
-import matplotlib.pyplot as plt
 import pandas as pd
-import seaborn as sns
 import xgboost as xgb
 
 # Load the trained XGBoost model
@@ -76,6 +74,8 @@ if prediction == 1:
 else:
     st.write('Passenger is likely to not survive.')
 
+st.markdown("---")
+
 # --- Model Accuracies Comparison ---
 model_accuracies = {
     "Logistic Regression": 0.7988826815642458,
@@ -91,32 +91,22 @@ model_accuracies = {
     "XGBoost_2": 0.8435754189944135
 }
 df = pd.DataFrame(list(model_accuracies.items()), columns=['Model', 'Accuracy'])
-
 st.title('Model Accuracies Comparison')
-plt.figure(figsize=(10, 6))
-plt.barh(df['Model'], df['Accuracy'])
-plt.xlabel('Accuracy')
-plt.ylabel('Model')
-plt.title('Model Accuracies Comparison')
-st.pyplot(plt)
+st.bar_chart(df.set_index('Model'))
 
-# --- Feature Heatmap ---
-heatmap_data = {
-    'Survived': [1.000000, -0.338481, 0.543351, -0.069809, -0.035322, 0.081629, 0.257307, 0.106811],
-    'Pclass': [-0.338481, 1.000000, -0.131900, -0.331339, 0.083081, 0.018443, -0.549500, 0.045702],
-    'Sex': [0.543351, -0.131900, 1.000000, -0.084153, 0.114631, 0.245489, 0.182333, 0.116569],
-    'Age': [-0.069809, -0.331339, -0.084153, 1.000000, -0.232625, -0.179191, 0.091566, 0.007461],
-    'SibSp': [-0.035322, 0.083081, 0.114631, -0.232625, 1.000000, 0.414838, 0.159651, -0.059961],
-    'Parch': [0.081629, 0.018443, 0.245489, -0.179191, 0.414838, 1.000000, 0.216225, -0.078665],
-    'Fare': [0.257307, -0.549500, 0.182333, 0.091566, 0.159651, 0.216225, 1.000000, 0.062142],
-    'Embarked': [0.106811, 0.045702, 0.116569, 0.007461, -0.059961, -0.078665, 0.062142, 1.000000]
+# --- Correlation Analysis ---
+correlation_data = {
+    "Pclass": -0.338481, 
+    "Survived": 0.543351, 
+    "Age": -0.069809, 
+    "SibSp": -0.035322, 
+    "Parch": 0.081629, 
+    "Fare": 0.257307, 
+    "Embarked": 0.106811
 }
-heatmap_df = pd.DataFrame(heatmap_data)
-
-st.title('Feature Heatmap')
-fig, ax = plt.subplots(figsize=(10, 8))
-sns.heatmap(heatmap_df.corr(), annot=True, cmap='coolwarm', fmt=".4f", ax=ax)
-st.pyplot(fig) 
+df = pd.DataFrame(list(correlation_data.items()), columns=['Feature', 'Correlation'])
+st.title('Correlation Analysis')
+st.bar_chart(df.set_index('Feature'))
 
 # --- About Me & Links Section ---
 st.markdown("---")
