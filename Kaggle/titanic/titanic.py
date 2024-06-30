@@ -4,7 +4,7 @@ import xgboost as xgb
 
 # Load the trained XGBoost model
 model = xgb.XGBClassifier()
-model.load_model('model.json')
+model.load_model('Kaggle\\titanic\\model.json')
 
 # Define a function to preprocess input data
 def preprocess_data(input_data):
