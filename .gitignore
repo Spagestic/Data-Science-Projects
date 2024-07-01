@@ -4,3 +4,6 @@
 
 # all files in the folders called data
 **/data/*
+
+# large models
+/Kaggle/nlp-with-disaster-tweets/best_model.pth
