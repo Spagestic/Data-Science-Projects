@@ -97,7 +97,7 @@ st.bar_chart(df.set_index('Model'))
 # --- Correlation Analysis ---
 correlation_data = {
     "Pclass": -0.338481, 
-    "Survived": 0.543351, 
+    "Gender": 0.543351, 
     "Age": -0.069809, 
     "SibSp": -0.035322, 
     "Parch": 0.081629, 
@@ -107,6 +107,10 @@ correlation_data = {
 df = pd.DataFrame(list(correlation_data.items()), columns=['Feature', 'Correlation'])
 st.title('Correlation Analysis')
 st.bar_chart(df.set_index('Feature'))
+st.write('''
+The correlation analysis shows the correlation between each feature and the target variable 'Survived'.
+         THe most correlated features are Gender and Pclass, while SibSp and Age are the least correlated.
+''')
 
 # --- About Me & Links Section ---
 st.markdown("---")
