@@ -8,3 +8,7 @@
 **/my_dir/*
 
 # large models
+
+
+# misc
+/Kaggle/music_genre_rocognition/Music_Genre_Recognition.ipynb
