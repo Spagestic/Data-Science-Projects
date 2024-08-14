@@ -4,5 +4,7 @@
 
 # all files in the folders called data
 **/data/*
+**/logs/*
+**/my_dir/*
 
 # large models
